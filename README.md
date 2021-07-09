@@ -17,7 +17,4 @@
 <br>
 
 ## 사용법
-blog_crawling.py 파일 open
-
-<img width="408" alt="test" src="https://user-images.githubusercontent.com/59256704/125067886-c9a87c80-e0ef-11eb-9ee3-27e3fb98ed8e.png">
-세번째 파라미터값을 다운받은 chromedriver.exe의 경로를 삽입하고 실행
+blog_crawling.py 파일을 실행합니다
