@@ -2,6 +2,7 @@ import pandas as pd
 import random
 from time import sleep
 from selenium import webdriver
+import chromedriver_autoinstaller
 
 
 class BlogCrawler:
@@ -9,7 +10,12 @@ class BlogCrawler:
         self.keyword = keyword
         self.max_page_no = page_no
 
-        self.driver = webdriver.Chrome(f"{driver_url}")
+        try:
+            self.driver = webdriver.Chrome(f"{driver_url}")
+        except:
+            chromedriver_autoinstaller.install(True)
+            self.driver = webdriver.Chrome(f"{driver_url}")
+
         self.main_url = "https://section.blog.naver.com/Search/Post.naver?pageNo="
         self.sub_url = f"&rangeType=ALL&orderBy=sim&keyword={self.keyword}"
 
