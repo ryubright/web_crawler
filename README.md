@@ -1,4 +1,4 @@
-# web_page_crawling
+# web_crawling
 
 - 웹페이지의 텍스트 데이터를 수집하기 위한 서비스입니다.
 
