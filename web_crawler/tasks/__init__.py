@@ -11,3 +11,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+from web_crawler.tasks.naver_blog import NaverBlogCrawler
+from web_crawler.tasks.daum_blog import DaumBlogCrawler
