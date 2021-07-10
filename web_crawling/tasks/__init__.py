@@ -12,3 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from web_crawling.utils.crawling_base import CrawlingBase
+
+from web_crawling.tasks.daum_blog import DaumBlogCrawler
+from web_crawling.tasks.naver_blog import NaverBlogCrawler
