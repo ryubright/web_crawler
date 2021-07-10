@@ -62,3 +62,4 @@ class DaumBlogCrawler(CrawlingBase):
             index=True,
             encoding='utf-8-sig'
         )
+        print(f"총 {self.max_page_no * 10 - self.error_count}개의 블로그 데이터 수집 완료")
