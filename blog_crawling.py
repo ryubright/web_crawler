@@ -1,11 +1,15 @@
 import chromedriver_autoinstaller
-from web_crawling.naver_blog.naver_blog_crawling import BlogCrawler
+from web_crawling.tasks.naver_blog import NaverBlogCrawler
+from web_crawling.tasks.daum_blog import DaumBlogCrawler
 
 
-keyword = input('키워드를 입력하세요 :')
-page_no = int(input('페이지수를 입력하세요. (한 페이지에 총 7개의 블로그에 대한 정보가 담겨있습니다) :'))
+keyword = input('키워드를 입력하세요 : ')
+max_page_no = int(input('페이지수를 입력하세요. : '))
 
 chrome_ver = chromedriver_autoinstaller.get_chrome_version().split('.')[0]
 
-blog_crawler = BlogCrawler(keyword, page_no, f'./{chrome_ver}/chromedriver.exe')
-blog_crawler()
+daum_blog_crawler = DaumBlogCrawler(keyword, max_page_no, f'./{chrome_ver}/chromedriver.exe')
+daum_blog_crawler()
+
+naver_blog_crawler = NaverBlogCrawler(keyword, max_page_no, f'./{chrome_ver}/chromedriver.exe')
+naver_blog_crawler()
