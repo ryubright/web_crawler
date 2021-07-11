@@ -13,7 +13,7 @@
 <br>
 
 ## 사용법
-__blog_crawling.py__ 파일을 실행합니다.
+__crawler.py__ 파일을 실행합니다.
 
 <br>
 
