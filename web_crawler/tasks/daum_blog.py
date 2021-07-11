@@ -15,7 +15,7 @@ class DaumBlogCrawler(CrawlingBase):
     @property
     def get_url(self) -> str:
         main_url = f"https://search.daum.net/search?w=blog&f=section&SA=daumsec&lpp=10&nil_src=blog&q={self.keyword}"
-        sub_url = f"&DA=PGD&page="
+        sub_url = f"&sort=timely&page="
 
         return main_url, sub_url
 
