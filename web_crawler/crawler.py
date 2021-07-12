@@ -8,7 +8,6 @@ TASKS = {
     "daum_blog": DaumBlogCrawler
 }
 
-
 CHROME_VER = chromedriver_autoinstaller.get_chrome_version().split('.')[0]
 BASE_DRIVER_PATH = f'./{CHROME_VER}/chromedriver.exe'
 
