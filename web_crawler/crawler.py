@@ -1,6 +1,6 @@
 import chromedriver_autoinstaller
-from web_crawler.utils.crawling_base import CrawlingBase
 
+from web_crawler.utils.crawling_base import CrawlingBase
 from web_crawler.tasks import NaverBlogCrawler, DaumBlogCrawler
 
 TASKS = {
