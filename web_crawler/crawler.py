@@ -8,8 +8,9 @@ TASKS = {
     "daum_blog": DaumBlogCrawler
 }
 
-chrome_ver = chromedriver_autoinstaller.get_chrome_version().split('.')[0]
-base_driver_path = f'./{chrome_ver}/chromedriver.exe'
+
+CHROME_VER = chromedriver_autoinstaller.get_chrome_version().split('.')[0]
+BASE_DRIVER_PATH = f'./{CHROME_VER}/chromedriver.exe'
 
 
 class WebCrawler:
@@ -18,7 +19,7 @@ class WebCrawler:
             task: str,
             keyword: str,
             max_page_no: int,
-            driver_path: str = base_driver_path,
+            driver_path: str = BASE_DRIVER_PATH,
     ) -> CrawlingBase:
         if task not in TASKS:
             raise KeyError("정의 되지 않은 task입니다.")
