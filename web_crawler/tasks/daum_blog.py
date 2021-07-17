@@ -1,12 +1,12 @@
 import pandas as pd
 import random
 from time import sleep
-from web_crawler.utils.crawling_base import CrawlingBase
+from web_crawler.utils.crawler_base import CrawlerBase
 
 
-class DaumBlogCrawler(CrawlingBase):
-    def __init__(self, keyword, max_page_no, driver_path):
-        super(DaumBlogCrawler, self).__init__(keyword, max_page_no, driver_path)
+class DaumBlogCrawler(CrawlerBase):
+    def __init__(self, keyword, max_page_no, driver_path, ip_bypass_flag):
+        super(DaumBlogCrawler, self).__init__(keyword, max_page_no, driver_path, ip_bypass_flag)
 
     def __call__(self) -> None:
         blog_title, blog_contents = self._crawling()
@@ -46,8 +46,8 @@ class DaumBlogCrawler(CrawlingBase):
                     self.error_count += 1
                     continue
 
-                delay_time = random.randint(0, 5)
-                sleep(delay_time)
+                # delay_time = random.randint(0, 5)
+                # sleep(delay_time)
 
                 blog_title_list.append(blog_title.text)
                 blog_content_list.append(blog_content.text)
@@ -62,4 +62,4 @@ class DaumBlogCrawler(CrawlingBase):
             index=True,
             encoding='utf-8-sig'
         )
-        print(f"총 {self.max_page_no * 10 - self.error_count}개의 블로그 데이터 수집 완료")
+        print(f"총 {self.max_page_no * 10 - self.error_count}개의 다음 블로그 데이터 수집 완료")
