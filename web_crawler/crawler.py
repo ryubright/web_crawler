@@ -1,6 +1,6 @@
 import chromedriver_autoinstaller
 
-from web_crawler.utils.crawling_base import CrawlingBase
+from web_crawler.utils.crawler_base import CrawlerBase
 from web_crawler.tasks import NaverBlogCrawler, DaumBlogCrawler
 
 TASKS = {
@@ -19,10 +19,11 @@ class WebCrawler:
             keyword: str,
             max_page_no: int,
             driver_path: str = BASE_DRIVER_PATH,
-    ) -> CrawlingBase:
+            ip_bypass_flag = True
+    ) -> CrawlerBase:
         if task not in TASKS:
             raise KeyError("정의 되지 않은 task입니다.")
 
-        crawling_object = TASKS[task](keyword, max_page_no, driver_path)
+        crawling_object = TASKS[task](keyword, max_page_no, driver_path, ip_bypass_flag)
 
         return crawling_object
